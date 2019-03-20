@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "post",
+  "info": {
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "user": {
+      "model": "user",
+      "via": "post",
+      "plugin": "users-permissions"
+    },
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "intro": {
+      "default": "",
+      "type": "text"
+    },
+    "content": {
+      "default": "",
+      "type": "text"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "blogcategory": {
+      "model": "blogcategory",
+      "via": "posts"
+    }
+  }
+}
